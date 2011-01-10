@@ -201,8 +201,6 @@ qq[Smokin'];
 
   $ smokebrew --plugin App::SmokeBrew::Plugin::BINGOS
 
-
-
 =head1 DESCRIPTION
 
 App::SmokeBrew::Plugin::BINGOS is a L<App::SmokeBrew::Plugin> for L<smokebrew> which 
@@ -211,6 +209,18 @@ sending test reports to a L<metabase-relayd> host using L<Test::Reporter::Transp
 
 It will set up the L<CPANPLUS> / L<CPANPLUS::YACSmoke> base locations to be in the C<conf> directory
 under the given C<prefix> directory with a directory for each perl version.
+
+=head1 CONFIGURATION
+
+This plugin requires two attributes: C<relay> - the hostname or IP address of a L<metabase-relayd>
+host and C<port> - the TCP port of the L<metabase-relayd> on that host.
+
+These attributes should be specified in the C<smokebrew.cfg> file under a named section:
+
+  [BINGOS]
+
+  relay = some.host
+  port = 8080
 
 =head1 METHODS
 
