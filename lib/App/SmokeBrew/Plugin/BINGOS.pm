@@ -163,7 +163,7 @@ $conf->set_conf( 'cpantest_reporter_args' =>
     {
       transport       => 'Socket',
       transport_args  => [ host => +;
-  $cpconf .= sprintf( '%s, port => %s ] } );', $self->relay, $self->port );
+  $cpconf .= sprintf( "'%s', port => '%s' ] } );", $self->relay, $self->port );
   $cpconf .= q+
 $conf->set_conf( email => $email );
 $conf->set_conf( makeflags => 'UNINST=1' );
