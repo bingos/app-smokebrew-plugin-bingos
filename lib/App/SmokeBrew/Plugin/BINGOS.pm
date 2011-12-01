@@ -121,6 +121,7 @@ my $ConfigFile  = $ConfObj->_config_pm_to_file( $Config => $PRIV_LIB );
     my $cb = CPANPLUS::Backend->new( $ConfObj );
     my $su = $cb->selfupdate_object;
 
+    $cb->module_tree( 'ExtUtils::MakeMaker' )->install(); # Move this here because icky is icky >:)
     $cb->module_tree( 'Module::Build' )->install(); # Move this here because perl-5.10.0 is icky
 
     $su->selfupdate( update => 'dependencies', latest => 1 );
@@ -134,7 +135,6 @@ my $ConfigFile  = $ConfObj->_config_pm_to_file( $Config => $PRIV_LIB );
           ExtUtils::CBuilder
           ExtUtils::ParseXS
           ExtUtils::Manifest
-          ExtUtils::MakeMaker
           Log::Message::Simple
           Test::Reporter::Transport::Socket
           CPANPLUS::YACSmoke
