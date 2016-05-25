@@ -121,6 +121,7 @@ my $ConfigFile  = $ConfObj->_config_pm_to_file( $Config => $PRIV_LIB );
     my $cb = CPANPLUS::Backend->new( $ConfObj );
     my $su = $cb->selfupdate_object;
 
+    $cb->module_tree( 'Test::More' )->install() if $] == 5.010000; # need this because 'version'
     $cb->module_tree( 'version' )->install(); # Move this here too because EUMM icky is icky :S
     $cb->module_tree( 'ExtUtils::MakeMaker' )->install(); # Move this here because icky is icky >:)
     $cb->module_tree( 'Module::Build' )->install(); # Move this here because perl-5.10.0 is icky
