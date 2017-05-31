@@ -46,7 +46,7 @@ BEGIN {
 
     $ENV{'PERL5LIB'} = join $Config{'path_sep'}, grep { defined }
                         $PRIV_LIB,              # to find the boxed config
-                        #$LIB_DIR,               # the CPANPLUS libs
+                        $LIB_DIR,               # the CPANPLUS libs
                         $ENV{'PERL5LIB'};       # original PERL5LIB
 
 }
